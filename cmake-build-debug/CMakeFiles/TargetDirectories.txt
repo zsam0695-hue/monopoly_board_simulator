@@ -1,0 +1,3 @@
+/Users/zahra/CLionProjects/monopoly_board_simulator/cmake-build-debug/CMakeFiles/monopoly_board_simulator.dir
+/Users/zahra/CLionProjects/monopoly_board_simulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zahra/CLionProjects/monopoly_board_simulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
