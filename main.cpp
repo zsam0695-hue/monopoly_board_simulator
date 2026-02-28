@@ -124,6 +124,23 @@ public:
                 added++;
         }
     }
+
+    // -------------------------------
+    // Core C: Traversal-Based Player Movement
+    // -------------------------------
+    void movePlayer(int steps) {
+        if (headNode == nullptr || playerNode == nullptr)
+            return;
+        for (int i = 0; i < steps; i++) {
+            if (playerNode == tailNode)
+                passGoCount++;
+            playerNode = playerNode->nextNode;
+        }
+    }
+
+    int getPassGoCount() {
+        return passGoCount;
+    }
 };
 
 // -------------------------------
