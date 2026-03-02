@@ -129,8 +129,10 @@ public:
     // Core C: Traversal-Based Player Movement
     // -------------------------------
     void movePlayer(int steps) {
-        if (headNode == nullptr || playerNode == nullptr)
+        if (headNode == nullptr || playerNode == nullptr) {
+            cout<<"Board is empty or Player is null"<<endl;
             return;
+        }
         for (int i = 0; i < steps; i++) {
             if (playerNode == tailNode)
                 passGoCount++;
@@ -140,6 +142,34 @@ public:
 
     int getPassGoCount() {
         return passGoCount;
+    }
+
+    // -------------------------------
+    // Core D: Controlled Board Display
+    // -------------------------------
+    void printFromPlayer(int count) {
+        if (headNode == nullptr || playerNode == nullptr) {
+            cout<<"Board is Empty"<<endl;
+            return;
+        }
+        Node<T>* player = playerNode;
+        for (int i = 0; i < count; i++) {
+            player->data.print();
+            player = player->nextNode;
+        }
+    }
+
+    // Optional helper: print full board once (one full cycle)
+    void printBoardOnce() {
+        if (headNode == nullptr || playerNode == nullptr) {
+            cout<<"Board is Empty"<<endl;
+            return;
+        }
+        Node<T>* current = headNode;
+        for (int i = 0; i < nodeCount; i++) {
+            current->data.print();
+            current = current->nextNode;
+        }
     }
 };
 
@@ -185,6 +215,7 @@ int main() {
         cout<<"Times passed GO so far: "<<board.getPassGoCount()<<endl;
     }
 
+    board.printBoardOnce();
     // -------------------------------
     // Advanced Feature Demos (students choose path)
     // -------------------------------
