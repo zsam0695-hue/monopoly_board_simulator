@@ -165,10 +165,10 @@ public:
             cout<<"Board is Empty"<<endl;
             return;
         }
-        Node<T>* current = headNode;
+        Node<T>* curr = headNode;
         for (int i = 0; i < nodeCount; i++) {
-            current->data.print();
-            current = current->nextNode;
+            curr->data.print();
+            curr = curr->nextNode;
         }
     }
 
@@ -195,6 +195,26 @@ public:
         Node<T>* temp = headNode;
         headNode = tailNode;
         tailNode = temp;
+    }
+
+    // -------------------------------
+    // Edge-case helper: countSpaces O(n)
+    // -------------------------------
+    int countSpaces() {
+        if (headNode == nullptr)
+            return 0;
+
+        int count = 0;
+        Node<T>* curr = headNode;
+
+        while (true) {
+            count++;
+            curr = curr->nextNode;
+
+            if (curr == headNode)
+                break;
+        }
+        return count;
     }
 };
 
@@ -243,13 +263,17 @@ int main() {
         cout<<"Times passed GO so far: "<<board.getPassGoCount()<<endl;
     }
 
+    cout<<endl<<"Board Print: "<<endl;
     board.printBoardOnce();
     // -------------------------------
     // Advanced Feature Demos (students choose path)
     // -------------------------------
     // Option B example:
     board.mirrorBoard();
+    cout<<endl<<"Mirror of the Board: "<<endl;
     board.printBoardOnce();
+
+    cout<<endl<<"Number of Spaces: "<<board.countSpaces()<<endl;
 
 
     return 0;

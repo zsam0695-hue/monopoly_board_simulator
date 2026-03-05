@@ -40,24 +40,24 @@ Each entry may be one of the following:
 **Commit(s):** I chose the Advanced Option B: Mirror the Board, so I wrote the method mirrorBoard().
 ---
 ### Entry 3
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-05
+**Entry Type:** Edge Case
+**Task worked on:** countSpaces()
+**Issue or decision:** When testing the method in main, the program ran an error. 
+**Error message / symptom (if applicable):** "error: expected ';' at end of declaration" 
+**What I tried:** I found the line and realized I had just forgotten a ; 
+**Fix / resolution (or final decision):** Wow, such a stupid mistake. I just went in and added a ; 
+**Commit(s):** In the process of writing countSpaces() method. 
 ---
 ### Entry 4
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-05
+**Entry Type:** Engineering Decision
+**Task worked on:** countSpaces() 
+**Issue or decision:** Since I cannot rely on nodeCount, so no for loop, I wanted to see if i can use a while loop. 
+**Error message / symptom (if applicable):** N/A
+**What I tried:** I tried using a while loop while(curr != tailNode) but it leaves out the last node, and if I try while(curr != headNode) it just never starts counting. 
+**Fix / resolution (or final decision):** I found a loop hole though, I can have while(true) and in the for loop I can count and everything, then check if the curr == headNode, since we have already counted and moved on from the headNode. 
+**Commit(s):** I completed the countSpaces() method with O(n). 
 ---
 ### Entry 5
 **Date:** YYYY-MM-DD
