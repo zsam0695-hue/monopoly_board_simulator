@@ -30,14 +30,14 @@ Each entry may be one of the following:
 **Commit(s):** I wrote the Core D, printFromPlayer method and the optional helper printBoardOnce method.
 ---
 ### Entry 2
-**Date:** YYYY-MM-DD
-**Entry Type:** Bug Fix / Edge Case / Engineering Decision
-**Task worked on:**
-**Issue or decision:**
-**Error message / symptom (if applicable):**
-**What I tried:**
-**Fix / resolution (or final decision):**
-**Commit(s):**
+**Date:** 2026-03-04
+**Entry Type:** Bug Fix
+**Task worked on:** mirrorBoard()
+**Issue or decision:** Everytime I run mirrorBoard(), it gives me the wrong reversed board.
+**Error message / symptom (if applicable):** Let's say we have a list 1->2->3->..., the method should change it to 3->2->1->.... Instead, it turns it into 3->1->3->....
+**What I tried:** I tried writing while(curr != nullptr), but that would be an infinite loop.  I also tried while(curr != headNode), but that wouldn't even change the list at all.
+**Fix / resolution (or final decision):** After some time, I realized it doesn't have to be like the slides from canvas and I can use a for loop. I used a for loop with nodeCount in order to know how many times I should change the pointers.
+**Commit(s):** I chose the Advanced Option B: Mirror the Board, so I wrote the method mirrorBoard().
 ---
 ### Entry 3
 **Date:** YYYY-MM-DD

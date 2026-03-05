@@ -171,6 +171,31 @@ public:
             current = current->nextNode;
         }
     }
+
+    // -------------------------------
+    // Advanced Option B (Level 2): Mirror the Board (Circular Reversal)
+    // -------------------------------
+    void mirrorBoard() {
+        if (headNode == nullptr || headNode == tailNode)
+            return;
+
+        Node<T>* prev = tailNode;
+        Node<T>* curr = headNode;
+        Node<T>* next = nullptr;
+
+        //was gonna use a while loop, but since it's a circular list one node will always be left out in the process
+        for (int i = 0; i < nodeCount; i++) {
+            next = curr->nextNode;
+            curr->nextNode = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        //still have to swap out head and tail in circular tho
+        Node<T>* temp = headNode;
+        headNode = tailNode;
+        tailNode = temp;
+    }
 };
 
 // -------------------------------
@@ -200,6 +225,9 @@ int main() {
     // NOTE: This starter calls addSpace once to show the intended API,
     // but your final submission should build a meaningful board.
     board.addSpace(MonopolySpace("GO", "None", 0, 0));
+    board.addSpace(MonopolySpace("Boardwalk", "Blue", 400, 50));
+    board.addSpace(MonopolySpace("Go Carts", "Orange", 100, 15));
+
     // -------------------------------
     // Playable Traversal Loop
     // -------------------------------
@@ -219,12 +247,10 @@ int main() {
     // -------------------------------
     // Advanced Feature Demos (students choose path)
     // -------------------------------
-    // Option A examples:
-    // board.removeByName("Baltic Avenue");
-    // vector<string> brownProps = board.findByColor("Brown");
-    //
     // Option B example:
-    // board.mirrorBoard();
+    board.mirrorBoard();
+    board.printBoardOnce();
+
 
     return 0;
 }
