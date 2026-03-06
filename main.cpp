@@ -216,6 +216,25 @@ public:
         }
         return count;
     }
+
+    // -------------------------------
+    // Cleanup
+    // -------------------------------
+    void clear() {
+        if (headNode == nullptr)
+            return;
+        tailNode->nextNode = nullptr;
+        Node<T>* curr = headNode;
+        while (curr != nullptr) {
+            delete curr;
+            curr = curr->nextNode;
+        }
+        headNode = nullptr;
+        tailNode = nullptr;
+        playerNode = nullptr;
+        nodeCount = 0;
+        passGoCount = 0;
+    }
 };
 
 // -------------------------------
@@ -274,6 +293,9 @@ int main() {
     board.printBoardOnce();
 
     cout<<endl<<"Number of Spaces: "<<board.countSpaces()<<endl;
+
+    board.clear();
+    board.printBoardOnce();
 
 
     return 0;
