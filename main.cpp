@@ -256,17 +256,38 @@ int main() {
     // The only requirement: never exceed MAX_SPACES and keep the list circular.
     //
     // Example (hardcoded) usage:
-    // vector<MonopolySpace> spaces;
-    // spaces.push_back(MonopolySpace("GO","None",0,0));
+    vector<MonopolySpace> spaces;
+    spaces.push_back(MonopolySpace("GO","None",0,0));
     // ...
     // board.addMany(spaces);
     //
     // NOTE: This starter calls addSpace once to show the intended API,
     // but your final submission should build a meaningful board.
-    board.addSpace(MonopolySpace("GO", "None", 0, 0));
-    board.addSpace(MonopolySpace("Boardwalk", "Blue", 400, 50));
-    board.addSpace(MonopolySpace("Go Carts", "Orange", 100, 15));
+    //board.addSpace(MonopolySpace("GO", "None", 0, 0));
+    spaces.push_back(MonopolySpace("Mediterranean Avenue", "Brown", 60, 2));
+    spaces.push_back(MonopolySpace("Baltic Avenue", "Brown", 60, 4));
+    spaces.push_back(MonopolySpace("Oriental Avenue", "Light Blue", 100, 6));
+    spaces.push_back(MonopolySpace("Vermont Avenue", "Light Blue", 100, 6));
+    spaces.push_back(MonopolySpace("Connecticut Avenue", "Light Blue", 120, 8));
+    spaces.push_back(MonopolySpace("St. Charles Avenue", "Pink", 140, 10));
+    spaces.push_back(MonopolySpace("States Avenue", "Pink", 140, 10));
+    spaces.push_back(MonopolySpace("Virginia Avenue", "Pink", 160, 12));
+    spaces.push_back(MonopolySpace("St. James Place", "Orange", 180, 14));
+    spaces.push_back(MonopolySpace("Tennessee Avenue", "Orange", 180, 14));
+    spaces.push_back(MonopolySpace("New York Avenue", "Orange", 200, 16));
+    spaces.push_back(MonopolySpace("Kentucky Avenue", "Red", 220, 18));
+    spaces.push_back(MonopolySpace("Indiana Avenue", "Red", 220, 18));
+    spaces.push_back(MonopolySpace("Illinois Avenue", "Red", 240, 20));
+    spaces.push_back(MonopolySpace("Atlantic Avenue", "Yellow", 260, 22));
+    spaces.push_back(MonopolySpace("Ventnor Avenue", "Yellow", 260, 22));
+    spaces.push_back(MonopolySpace("Marvin Gardens", "Yellow", 280, 24));
+    spaces.push_back(MonopolySpace("Pacific Avenue", "Green", 300, 26));
+    spaces.push_back(MonopolySpace("North Carolina Avenue", "Green", 300, 26));
+    spaces.push_back(MonopolySpace("Pennsylvania Avenue", "Green", 320, 28));
+    spaces.push_back(MonopolySpace("Park Place", "Blue", 350, 35));
+    spaces.push_back(MonopolySpace("Boardwalk", "Blue", 400, 50));
 
+    board.addMany(spaces);
     // -------------------------------
     // Playable Traversal Loop
     // -------------------------------
@@ -295,7 +316,7 @@ int main() {
     cout<<endl<<"Number of Spaces: "<<board.countSpaces()<<endl;
 
     board.clear();
-    board.printBoardOnce();
+    //board.printBoardOnce();
 
 
     return 0;
